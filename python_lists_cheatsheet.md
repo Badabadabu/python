@@ -448,4 +448,111 @@ print(f"append: {time_append:.6f}s, '+': {time_plus:.6f}s")
 ```
 
 ---
+🔵 ДОБАВЛЕНИЕ ЭЛЕМЕНТОВ
 
+append() — "Прицепить в хвост"
+
+Мнемоника: Add Point Put End Now Done➕ Один элемент в конец (целиком)
+
+fruits = ["🍎", "🍌"]
+fruits.append("🍒")      # ["🍎", "🍌", "🍒"]
+fruits.append([1,2])      # ["🍎", "🍌", "🍒", [1,2]] ← список как один элемент
+
+extend() — "Растянуть/Расширить"
+
+Мнемоника: Each Xtra Thing Enters Nicely Done➕ Распаковывает элементы из коллекции
+
+fruits = ["🍎", "🍌"]
+fruits.extend("hi")     # ["🍎", "🍌", "h", "i"]
+fruits.extend([1,2,3])  # ["🍎", "🍌", "h", "i", 1, 2, 3]
+
+insert() — "Втиснуть"
+
+Мнемоника: In Specific Exact Right There➕ Вставить по индексу
+
+fruits = ["🍎", "🍌"]
+fruits.insert(1, "🫐")   # ["🍎", "🫐", "🍌"]
+fruits.insert(0, "🥝")   # ["🥝", "🍎", "🫐", "🍌"]
+
+🔴 УДАЛЕНИЕ ЭЛЕМЕНТОВ
+
+remove() — "Удалить по значению"
+
+Мнемоника: Remove Exact Match Only Value Error➖ Удаляет первое вхождение значения
+
+fruits = ["🍎", "🍌", "🍎"]
+fruits.remove("🍎")      # ["🍌", "🍎"]
+# fruits.remove("🍊")   # ❌ ValueError
+
+pop() — "Выстрелить и вернуть"
+
+Мнемоника: Pick Out Position➖ Удаляет по индексу и возвращает элемент
+
+fruits = ["🍎", "🍌", "🍒"]
+fruits.pop()     # "🍒"
+fruits.pop(0)    # "🍎"
+
+clear() — "Очистить всё"
+
+Мнемоника: Clean List Everything Away Removed➖ Удаляет всё
+
+fruits.clear()  # []
+
+🔍 ПОИСК И ПОДСЧЁТ
+
+index() — "Найти позицию"
+
+Мнемоника: In Data Exact X-position🔍 Индекс первого вхождения
+
+fruits.index("🍎")    # 0
+
+count() — "Сосчитать количество"
+
+Мнемоника: Count Occurrences Until Nothing Total🔢 Сколько раз встречается элемент
+
+fruits.count("🍎")   # 2
+fruits.count("🍊")   # 0
+
+📊 СОРТИРОВКА И ПОРЯДОК
+
+sort() — "Сортировать на месте"
+
+Мнемоника: Same Original Replaced Totally
+
+nums = [3, 1, 2]
+nums.sort()  # [1, 2, 3]
+
+reverse() — "Развернуть на месте"
+
+Мнемоника: Reverse Everything Vice Exact Replace Same End
+
+nums = [1, 2, 3]
+nums.reverse()  # [3, 2, 1]
+
+🌟 ВСТРОЕННЫЕ ФУНКЦИИ (не методы)
+
+sorted() — возвращает новый отсортированный список
+
+nums = [3, 1, 2]
+new_nums = sorted(nums)  # [1, 2, 3]
+
+reversed() — возвращает итератор (перевёрнутый)
+
+list(reversed([1, 2, 3]))  # [3, 2, 1]
+
+min() и max() — минимум и максимум
+
+min([3, 1, 2])  # 1
+max([3, 1, 2])  # 3
+
+sum() — сумма всех элементов
+
+sum([1, 2, 3])  # 6
+
+🧠 Частые ошибки
+
+append(1, 2) ❌ — принимает только один аргумент
+
+extend(5) ❌ — 5 не итерируем
+
+remove("нету") ❌ — ошибка, если нет такого значения
